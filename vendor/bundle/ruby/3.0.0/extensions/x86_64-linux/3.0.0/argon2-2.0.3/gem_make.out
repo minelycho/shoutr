@@ -1,0 +1,15 @@
+current directory: /home/minerva/shoutr/vendor/bundle/ruby/3.0.0/gems/argon2-2.0.3/ext/argon2_wrap
+/usr/share/rvm/rubies/ruby-3.0.0/bin/ruby -I /usr/share/rvm/rubies/ruby-3.0.0/lib/ruby/site_ruby/3.0.0 -r ./siteconf20210507-12986-9zdls6.rb extconf.rb
+
+current directory: /home/minerva/shoutr/vendor/bundle/ruby/3.0.0/gems/argon2-2.0.3/ext/argon2_wrap
+make DESTDIR\= clean
+rm -f tests libargon2_wrap.so
+
+current directory: /home/minerva/shoutr/vendor/bundle/ruby/3.0.0/gems/argon2-2.0.3/ext/argon2_wrap
+make DESTDIR\=
+cc -pthread -O3 -Wall -g -I../phc-winner-argon2/include -I../phc-winner-argon2/src -shared -fPIC ../phc-winner-argon2/src/argon2.c ../phc-winner-argon2/src/core.c ../phc-winner-argon2/src/blake2/blake2b.c ../phc-winner-argon2/src/thread.c ../phc-winner-argon2/src/encoding.c argon_wrap.c ../phc-winner-argon2/src/ref.c -o libargon2_wrap.so
+
+current directory: /home/minerva/shoutr/vendor/bundle/ruby/3.0.0/gems/argon2-2.0.3/ext/argon2_wrap
+make DESTDIR\= install
+echo none
+none
