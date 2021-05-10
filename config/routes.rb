@@ -1,5 +1,15 @@
+
 Rails.application.routes.draw do
-  root to: "homes#show"
+
+constraints Clearance::Constraints::SignedIn.new do
+   root to: "dashboards#show"
+
+ end
+
+
+
+  root to: "homes#show" , 
+  constraints: lambda { |req| req.session[:user_id].nil? }, as: nil
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
 
@@ -8,6 +18,7 @@ Rails.application.routes.draw do
       controller: "clearance/passwords",
       only: [:edit, :update]
   end
+
 
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"

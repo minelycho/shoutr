@@ -1,4 +1,4 @@
-class SessionsController < Clearance::SessionsController
+class SessionsController <Clearance::SessionsController
 	private
 
 	def authenticate(_)
