@@ -10,6 +10,8 @@ constraints Clearance::Constraints::SignedIn.new do
 
   root to: "homes#show" , 
   constraints: lambda { |req| req.session[:user_id].nil? }, as: nil
+  resources :shouts, only: [:create]
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
 
